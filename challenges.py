@@ -1,6 +1,8 @@
 from collections import defaultdict
 from collections import Counter
 
+import re
+
 
 def is_even(n):
     return n % 2 == 0
@@ -59,7 +61,9 @@ def is_palindrome(s):
 def count_words(sentence):
     input = sentence.lower()
 
-    arr = input.split(" ")
+    # Split the input string into an array of words using whitespace as a delimiter removing any punctuation from the sentence
+    arr = re.sub(r"[,.;@#?!&$]+\ *", " ", input).split()
+
     counters = defaultdict(lambda: 0)
 
     for word in arr:
