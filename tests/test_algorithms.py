@@ -8,7 +8,13 @@ This module contains tests for various algorithm implementations including:
 - Even number detection
 """
 
-from src.challenges.algorithms import is_palindrome, count_words, fibonacci, is_even
+from src.challenges.algorithms import (
+    is_palindrome,
+    count_words,
+    fibonacci,
+    fibonacci_numbers,
+    is_even,
+)
 
 
 class TestAlgorithms:
@@ -36,6 +42,13 @@ class TestAlgorithms:
         assert fibonacci(2) == 1
         assert fibonacci(3) == 2
         assert fibonacci(10) == 55
+
+    def test_fibonacci_numbers(self):
+        """Test fibonacci_numbers function to test the first n Fibonacci numbers."""
+        assert fibonacci_numbers(0) == [0]
+        assert fibonacci_numbers(1) == [0, 1]
+        assert fibonacci_numbers(5) == [0, 1, 1, 2, 3]
+        assert fibonacci_numbers(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
     def test_is_even(self):
         """Test is_even function with positive, negative, and zero inputs."""

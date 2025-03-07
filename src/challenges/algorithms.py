@@ -153,3 +153,23 @@ def count_words(sentence):
             counters[word] = 1
 
     return counters
+
+
+def fibonacci_numbers(n):
+    """
+    Generate the first n Fibonacci numbers.
+
+    Args:
+        n: The number of Fibonacci numbers to generate
+
+    Returns:
+        list: A list of the first n Fibonacci numbers
+    """
+    if n == 0:
+        return [0]
+    if n == 1:
+        return [0, 1]
+    fib = [0, 1]
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib
