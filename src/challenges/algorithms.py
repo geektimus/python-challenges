@@ -24,10 +24,6 @@ def square_lambda(n):
     return lambda x: x**n
 
 
-def count_words(text):
-    return Counter(text.split())
-
-
 def fibonacci(n, memo={}):
     if n in memo:
         return memo[n]
