@@ -1,8 +1,24 @@
+"""
+Main entry point for the Python Challenges application.
+
+This module demonstrates the usage of various utility functions and algorithms
+implemented in the project.
+"""
+
 from src.utils.dict_utils import contains_key
 from src.challenges.algorithms import is_palindrome, count_words
 
 
 def main():
+    """
+    Execute demonstration code for Python Challenges.
+    
+    This function shows examples of using the various functions and utilities
+    provided by the Python Challenges package.
+    
+    Returns:
+        None
+    """
     print("Python Challenges")
     print("----------------")
 
