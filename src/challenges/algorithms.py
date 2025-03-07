@@ -1,5 +1,4 @@
 from collections import defaultdict
-from collections import Counter
 
 import re
 
@@ -24,7 +23,9 @@ def square_lambda(n):
     return lambda x: x**n
 
 
-def fibonacci(n, memo={}):
+def fibonacci(n, memo=None):
+    if memo is None:
+        memo = {}
     if n in memo:
         return memo[n]
     if n == 0:
@@ -45,20 +46,19 @@ def fibonacci_tail_recursive(n, a=0, b=1):
 
 def is_palindrome(s):
     # Remove whitespace and lowercase input string
-    input = s.lower().replace(" ", "")
+    txt = s.lower().replace(" ", "")
 
-    for i in range(len(input)):
-        j = len(input)-i-1
-        if (input[i] != input[j]):
+    for i, char in enumerate(txt[:len(txt) // 2]):
+        if char != txt[-(i + 1)]:
             return False
     return True
 
 
 def count_words(sentence):
-    input = sentence.lower()
+    txt = sentence.lower()
 
-    # Split the input string into an array of words using whitespace as a delimiter removing any punctuation from the sentence
-    arr = re.sub(r"[,.;@#?!&$]+\ *", " ", input).split()
+    # Split the sentence string into an array of words using whitespace as a delimiter removing any punctuation from the sentence
+    arr = re.sub(r"[,.;@#?!&$]+\ *", " ", txt).split()
 
     counters = defaultdict(lambda: 0)
 

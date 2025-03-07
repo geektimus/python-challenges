@@ -1,4 +1,3 @@
-import pytest
 from src.utils.dict_utils import contains_key
 from src.utils.list_utils import sum_numbers_in_list, sum_numbers_in_list_without_sum
 from src.utils.string_utils import reverse_string
@@ -20,7 +19,7 @@ class TestListUtils:
         assert sum_numbers_in_list([1, 2, 3, 4, 5]) == 15
         assert sum_numbers_in_list([]) == 0
         assert sum_numbers_in_list([-1, -2, 3]) == 0
-    
+
     def test_sum_numbers_in_list_without_sum(self):
         assert sum_numbers_in_list_without_sum([1, 2, 3, 4, 5]) == 15
         assert sum_numbers_in_list_without_sum([]) == 0
